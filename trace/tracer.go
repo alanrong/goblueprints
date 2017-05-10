@@ -11,6 +11,7 @@ type Tracer interface {
 	Trace(...interface{})
 }
 
+//New generate a new tracer
 func New(w io.Writer) Tracer {
 	return &tracer{out: w}
 }
@@ -22,4 +23,15 @@ type tracer struct {
 func (t *tracer) Trace(a ...interface{}) {
 	fmt.Fprint(t.out, a...)
 	fmt.Fprintln(t.out)
+}
+
+type nilTracer struct {
+}
+
+func (t *nilTracer) Trace(a ...interface{}) {
+}
+
+//Off create a Tracer that will ignore calls to Trace
+func Off() Tracer {
+	return &nilTracer{}
 }
