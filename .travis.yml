@@ -6,4 +6,4 @@ go:
 install:
     - go get github.com/gorilla/websocket
 
-script: go build ./chat && go test ./trace
+script: mkdir bin && go build -o ./bin/chat ./chat && go test ./trace
