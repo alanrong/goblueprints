@@ -6,4 +6,4 @@ go:
 install:
     - go get github.com/gorilla/websocket
 
-script:go test blueprints/trace
+script: go test blueprints/trace
