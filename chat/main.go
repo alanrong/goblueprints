@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"goblueprints/trace"
 	"html/template"
 	"log"
 	"net/http"
@@ -10,6 +9,7 @@ import (
 	"path/filepath"
 	"sync"
 
+	"github.com/alanrong/goblueprints/trace"
 	"github.com/gorilla/websocket"
 )
 
